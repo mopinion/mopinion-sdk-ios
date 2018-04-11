@@ -35,9 +35,9 @@ in the `AppDelegate.swift` file of your app put:
 import MopinionSDK
 ...
 // debug mode
-MopinionSDK.load("3t5sg11dpm3vrpoquxirnsdvi4dff12y4vv", true)
+MopinionSDK.load(<MOPINION DEPLOYMENT KEY>, true)
 // live
-MopinionSDK.load("3t5sg11dpm3vrpoquxirnsdvi4dff12y4vv")
+MopinionSDK.load(<MOPINION DEPLOYMENT KEY>)
 ```
 
 in a UIViewController, for example `ViewController.swift`, put:
