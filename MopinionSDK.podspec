@@ -2,14 +2,14 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "MopinionSDK"
-  s.version      = "0.1.0"
+  s.version      = "0.1.3"
   s.summary      = "Mopinion iOS SDK"
   s.ios.deployment_target  = '9.0'
   s.description  = "Mopinion mobile SDK for iOS. Build dynamic customizable customer feedback forms for your iOS app."
   s.homepage     = "http://mopinion.com"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.authors      = { "Floris Snuif" => "floris@mopinion.com", "Anwar Jebali" => "anwar@mopinion.com" }
