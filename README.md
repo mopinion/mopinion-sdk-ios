@@ -48,7 +48,7 @@ make a `package.json` file in the root of your project:
 ```javascript
 {
   "name": "MopinionSDK",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.51.0"
