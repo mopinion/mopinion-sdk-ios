@@ -5,7 +5,7 @@ To use Mopinion mobile feedback forms in your app you can include the SDK as a F
 
 There is also a Mopinion Mobile SDK for Android available [here](https://github.com/mopinion/mopinion-sdk-android).
 
-you can see what your mobile forms will look like in your app by downloading our Mopinion [Forms preview app](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) in the Apple iOS App Store.
+you can see what your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app in the Apple iOS App Store.
 
 ## Install
 
