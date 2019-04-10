@@ -1,5 +1,5 @@
 framework module glog {
-  umbrella header "GLog-umbrella.h"
+  umbrella header "glog-umbrella.h"
 
   export *
   module * { export * }
