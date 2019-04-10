@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 	s.author      = "Facebook"
   
 	# ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-	s.platform     = :ios, "8.0"
+	s.platform     = :ios, "9.0"
   
 	# ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 	s.source = {:git => "https://github.com/mopinion/mopinion-sdk-ios.git", :tag => s.version}
