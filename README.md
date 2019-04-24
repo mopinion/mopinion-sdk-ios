@@ -24,7 +24,7 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.3.0'
+	pod 'MopinionSDK',  '>= 0.3.1'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -121,6 +121,26 @@ where `"_button"` is the default passive form event.
 You can also make custom events and use them in the Mopinion deployment interface.  
 In the Mopinion system you can enable or disable the feedback form when a user of your app executes the event.
 The event could be a touch of a button, at the end of a transaction, proactive, etc.
+
+## extra data
+
+From version `0.3.1` it's also possible to send extra data from the app to your form. 
+This can be done by adding a key and a value to the `data()` method.
+The data should be added before the `event()` method is called if you want to include the data in the form that comes up for that event.
+
+```swift
+MopinionSDK.data(_key: String, _value: String)
+```
+
+Example:
+```swift
+import MopinionSDK
+...
+MopinionSDK.data("first name": "Steve")
+MopinionSDK.data("last name": "Jobs")
+...
+MopinionSDK.event(self, "_button")
+```
 
 ## Edit triggers
 
