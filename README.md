@@ -24,7 +24,7 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.3.2'
+	pod 'MopinionSDK',  '>= 0.3.3'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -52,8 +52,8 @@ make a `package.json` file in the root of your project:
   "name": "MopinionSDK",
   "version": "0.1.0",
   "dependencies": {
-    "react": "16.8.3",
-    "react-native": "^0.59.4"
+    "react": "16.8.6",
+    "react-native": "^0.59.8"
   }
 }
 ```
@@ -74,8 +74,7 @@ target '<YOUR TARGET>' do
 	  'RCTImage',
 	  'RCTNetwork',
 	  'RCTText',
-	  'RCTWebSocket',
-	  'RCTAnimation',
+	  'RCTWebSocket'
 	]
 	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
 	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
