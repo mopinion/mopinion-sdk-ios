@@ -24,7 +24,7 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.3.3'
+	pod 'MopinionSDK',  '~> 0.3.4'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -139,6 +139,31 @@ MopinionSDK.data("first name": "Steve")
 MopinionSDK.data("last name": "Jobs")
 ...
 MopinionSDK.event(self, "_button")
+```
+
+## clear extra data
+
+From version `0.3.4` it's possible to remove all or a single key-value pair from the extra data previously supplied with the `data(key,value)` method.
+To remove a single key-value pair use this method:
+
+```swift
+MopinionSDK.removeData(forKey: String)
+```
+Example:
+
+```swift
+MopinionSDK.removeData(forKey: "first name")
+```
+
+To remove all supplied extra data use this method without arguments:
+
+```swift
+MopinionSDK.removeData()
+```
+Example:
+
+```swift
+MopinionSDK.removeData()
 ```
 
 ## Edit triggers
