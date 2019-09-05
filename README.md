@@ -9,12 +9,12 @@ you can see what your mobile forms will look like in your app by downloading our
 
 ## Install
 
-The Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
+For Xcode 10, the Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
 
 ### Install with Cocoapods
 
-Install Cocoapods
+Install using Cocoapods. This method won't work for Xcode 11 beta yet, follow the instructions in Install with Cocoapods and React-Native instead.
 
 `$ sudo gem install cocoapods`
 
@@ -41,7 +41,7 @@ After this you should use the newly made `.xcworkspace` file in Xcode.
 
 ### Install with Cocoapods and React Native (Node.js)
 
-An alternative is to install the React Native frameworks via Node.js. 
+Alternatively, and for Xcode 11 beta, install the React Native frameworks via Node.js. 
 
 [Install Node.js/npm](https://www.npmjs.com/get-npm)
 
@@ -53,7 +53,7 @@ make a `package.json` file in the root of your project:
   "version": "0.1.0",
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "^0.59.8"
+    "react-native": "^0.59.9"
   }
 }
 ```
