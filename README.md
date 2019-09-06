@@ -60,7 +60,7 @@ make a `package.json` file in the root of your project:
 
 `$ npm install`
 
-Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`):
+Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) for Xcode 10:
 
 ```ruby
 platform :ios, '9.0'
@@ -82,6 +82,30 @@ target '<YOUR TARGET>' do
 	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
 end
 ```
+
+or this for Xcode 11 beta:
+
+```ruby
+platform :ios, '9.0'
+use_frameworks!
+target '<YOUR TARGET>' do
+	pod 'MopinionSDK', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
+	pod 'React', :path => './node_modules/react-native', :subspecs => [
+	  'Core',
+	  'CxxBridge',
+	  'DevSupport',
+	  'RCTImage',
+	  'RCTNetwork',
+	  'RCTText',
+	  'RCTWebSocket'
+	]
+	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
+	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
+	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+```
+
 
 `$ pod install`
 
