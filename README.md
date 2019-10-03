@@ -41,7 +41,7 @@ After this you should use the newly made `.xcworkspace` file in Xcode.
 
 ### Install with Cocoapods and React Native (Node.js)
 
-Alternatively, and for Xcode 11 beta, install the React Native frameworks via Node.js. 
+Alternatively, and for Xcode 11, install the React Native frameworks via Node.js. 
 
 [Install Node.js/npm](https://www.npmjs.com/get-npm)
 
@@ -66,7 +66,7 @@ Now you can install everything with Cocoapods with a `Podfile` like this (assumi
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK'
+	pod 'MopinionSDK',  '~> 0.3.4'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
@@ -83,13 +83,13 @@ target '<YOUR TARGET>' do
 end
 ```
 
-or this for Xcode 11 beta:
+or this for Xcode 11:
 
 ```ruby
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
+	pod 'MopinionSDK',  '>= 0.4.0'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
@@ -109,7 +109,7 @@ end
 
 `$ pod install`
 
-After this you should use the newly made `.xcworkspace` file in Xcode.
+After this you should use the newly created `.xcworkspace` file in Xcode.
 
 ### font
 
