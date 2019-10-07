@@ -24,7 +24,7 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.3.4'
+	pod 'MopinionSDK',  '~> 0.3.5'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -66,7 +66,7 @@ Now you can install everything with Cocoapods with a `Podfile` like this (assumi
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.3.4'
+	pod 'MopinionSDK',  '~> 0.3.5'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
