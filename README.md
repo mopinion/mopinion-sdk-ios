@@ -14,7 +14,7 @@ The SDK is partly built with [React Native](https://facebook.github.io/react-nat
 
 ### Install with Cocoapods
 
-Install using Cocoapods. This method won't work for Xcode 11 beta yet, follow the instructions in Install with Cocoapods and React-Native instead.
+Install using Cocoapods. This method won't work for Xcode 11 yet, follow the instructions in Install with Cocoapods and React-Native instead.
 
 `$ sudo gem install cocoapods`
 
@@ -60,7 +60,32 @@ make a `package.json` file in the root of your project:
 
 `$ npm install`
 
-Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) for Xcode 10:
+Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) 
+for Xcode 11.2:
+
+```ruby
+platform :ios, '9.0'
+use_frameworks!
+target '<YOUR TARGET>' do
+	pod 'MopinionSDK',  '>= 0.4.1'
+	pod 'React', :path => './node_modules/react-native', :subspecs => [
+	  'Core',
+	  'CxxBridge',
+	  'DevSupport',
+	  'RCTImage',
+	  'RCTNetwork',
+	  'RCTText',
+	  'RCTWebSocket'
+	]
+	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
+	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
+	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+```
+
+
+or this for Xcode 10:
 
 ```ruby
 platform :ios, '9.0'
@@ -83,30 +108,8 @@ target '<YOUR TARGET>' do
 end
 ```
 
-or this for Xcode 11:
-
-```ruby
-platform :ios, '9.0'
-use_frameworks!
-target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.4.0'
-	pod 'React', :path => './node_modules/react-native', :subspecs => [
-	  'Core',
-	  'CxxBridge',
-	  'DevSupport',
-	  'RCTImage',
-	  'RCTNetwork',
-	  'RCTText',
-	  'RCTWebSocket'
-	]
-	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
-	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
-	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
-end
-```
-
-
+And perform a
+ 
 `$ pod install`
 
 After this you should use the newly created `.xcworkspace` file in Xcode.
