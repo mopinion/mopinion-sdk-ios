@@ -61,13 +61,13 @@ make a `package.json` file in the root of your project:
 `$ npm install`
 
 Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) 
-for Xcode 11.2:
+for Xcode 11.2.1 and later (do not use Xcode 11.2, it creates broken apps):
 
 ```ruby
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.4.1'
+	pod 'MopinionSDK',  '>= 0.4.2'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
@@ -75,7 +75,8 @@ target '<YOUR TARGET>' do
 	  'RCTImage',
 	  'RCTNetwork',
 	  'RCTText',
-	  'RCTWebSocket'
+	  'RCTWebSocket',
+	  'RCTAnimation'
 	]
 	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
 	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
@@ -116,9 +117,9 @@ After this you should use the newly created `.xcworkspace` file in Xcode.
 
 ### font
 
-The SDK includes a font that should be added to the fonts list in the `info.plist` file of your project.
+The SDK includes a font that should be added to the fonts list in the `Info.plist` file of your project.
 
-Add this font to your app's `info.plist` > `Fonts provided by application`:   
+Add this font to your app's `Info.plist` > `Fonts provided by application`:   
 - `Frameworks/MopinionSDK.framework/FontAwesome.ttf`
 
 ## Implement the SDK
