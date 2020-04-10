@@ -9,12 +9,12 @@ you can see what your mobile forms will look like in your app by downloading our
 
 ## Install
 
-For Xcode 10, the Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
+For Xcode 11, the Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
 
 ### Install with Cocoapods
 
-Install using Cocoapods. This method won't work for Xcode 11 yet, follow the instructions in Install with Cocoapods and React-Native instead.
+Install using Cocoapods. This method works for Xcode 11.4. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier verison of our SDK.
 
 `$ sudo gem install cocoapods`
 
@@ -24,7 +24,7 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.3.5'
+	pod 'MopinionSDK',  '~> 0.4.3'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -41,7 +41,7 @@ After this you should use the newly made `.xcworkspace` file in Xcode.
 
 ### Install with Cocoapods and React Native (Node.js)
 
-Alternatively, and for Xcode 11, install the React Native frameworks via Node.js. 
+Alternatively, install the React Native frameworks via Node.js. 
 
 [Install Node.js/npm](https://www.npmjs.com/get-npm)
 
@@ -61,13 +61,13 @@ make a `package.json` file in the root of your project:
 `$ npm install`
 
 Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) 
-for Xcode 11.2.1 and later (do not use Xcode 11.2, it creates broken apps):
+for Xcode 11.4 :
 
 ```ruby
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.4.2'
+	pod 'MopinionSDK',  '>= 0.4.3'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
@@ -84,32 +84,9 @@ target '<YOUR TARGET>' do
 	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
 end
 ```
+(if you're using Xcode 11.3.1 use `pod 'MopinionSDK', '0.4.2'` instead in the above Podfile)
 
-
-or this for Xcode 10:
-
-```ruby
-platform :ios, '9.0'
-use_frameworks!
-target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.3.5'
-	pod 'React', :path => './node_modules/react-native', :subspecs => [
-	  'Core',
-	  'CxxBridge',
-	  'DevSupport',
-	  'RCTImage',
-	  'RCTNetwork',
-	  'RCTText',
-	  'RCTWebSocket'
-	]
-	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
-	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
-	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
-end
-```
-
-And perform a
+Next perform a
  
 `$ pod install`
 
