@@ -5,7 +5,7 @@ To use Mopinion mobile feedback forms in your app you can include the SDK as a F
 
 There is also a Mopinion Mobile SDK for Android available [here](https://github.com/mopinion/mopinion-sdk-android).
 
-you can see what your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app in the Apple iOS App Store.
+You can see how your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app from the Apple iOS App Store.
 
 ## Install
 
@@ -14,7 +14,7 @@ The SDK is partly built with [React Native](https://facebook.github.io/react-nat
 
 ### Install with Cocoapods
 
-Install using Cocoapods. This method works for Xcode 11.4. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier verison of our SDK.
+Install using Cocoapods. This method works for Xcode 11.4. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier version of our SDK.
 
 `$ sudo gem install cocoapods`
 
@@ -24,8 +24,9 @@ make a `Podfile` in root of your project:
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.4.3'
+	pod 'MopinionSDK',  '~> 0.4.4'
 	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
+	pod 'react-native-webview', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
 	pod 'GLog', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -37,7 +38,7 @@ Install the needed pods:
 
 `$ pod install`
 
-After this you should use the newly made `.xcworkspace` file in Xcode.
+After this you should use the newly made `*.xcworkspace` file in Xcode.
 
 ### Install with Cocoapods and React Native (Node.js)
 
@@ -53,12 +54,15 @@ make a `package.json` file in the root of your project:
   "version": "0.1.0",
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "^0.59.9"
+    "react-native": "^0.59.10",
+    "react-native-webview": "^9.2.2"
   }
 }
 ```
 
 `$ npm install`
+
+Note: if you decide to use react-native version 0.59.10 then you'll manually need to remove UIWebView from its source code if you want your App to be accepted by the Appstore.
 
 Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) 
 for Xcode 11.4 :
@@ -67,7 +71,7 @@ for Xcode 11.4 :
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.4.3'
+	pod 'MopinionSDK',  '>= 0.4.4'
 	pod 'React', :path => './node_modules/react-native', :subspecs => [
 	  'Core',
 	  'CxxBridge',
@@ -79,18 +83,18 @@ target '<YOUR TARGET>' do
 	  'RCTAnimation'
 	]
 	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
+	pod 'react-native-webview', :path => './node_modules/react-native-webview/react-native-webview.podspec'
 	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
 	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
 	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
 end
 ```
-(if you're using Xcode 11.3.1 use `pod 'MopinionSDK', '0.4.2'` instead in the above Podfile)
 
 Next perform a
  
 `$ pod install`
 
-After this you should use the newly created `.xcworkspace` file in Xcode.
+After this you should use the newly created `*.xcworkspace` file in Xcode.
 
 ### font
 
@@ -182,4 +186,4 @@ The custom defined events can be used in combination with rules:
 * percentage (proactive trigger): % of users that should see the form  
 * date: only show the form at at, after or before a specific date or date range  
 * time: only show the form at at, after or before a specific time or time range  
-* target: the OS the form should show (iOS or Android)  
+* target: show the form only in the specified OS (iOS or Android)
