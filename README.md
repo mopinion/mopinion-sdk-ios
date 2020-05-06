@@ -25,12 +25,12 @@ platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
 	pod 'MopinionSDK',  '~> 0.4.4'
-	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-	pod 'react-native-webview', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-	pod 'GLog', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-	pod 'Folly', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
+	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
+	pod 'react-native-webview', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
+	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
+	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
+	pod 'GLog', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
+	pod 'Folly', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
 end
 ```
 
