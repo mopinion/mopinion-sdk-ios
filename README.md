@@ -33,12 +33,24 @@ target '<YOUR TARGET>' do
 	pod 'Folly', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
 end
 ```
-
+  
 Install the needed pods:
 
 `$ pod install`
 
 After this you should use the newly made `*.xcworkspace` file in Xcode.
+
+**Note:** if you get `Failed to download` errors from the `pod install`, make sure that you have [an account at github.com and have setup your github SSH key](https://github.com/settings/ssh) as the above Podfile requires it. If you don't have a github account, then in the Podfile, replace all occurances of
+
+```ruby
+:git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
+```
+by
+
+```ruby
+:git => 'https://github.com/mopinion/mopinion-sdk-ios.git'
+```
+And then run the `pod install` again.
 
 ### Install with Cocoapods and React Native (Node.js)
 
