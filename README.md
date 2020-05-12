@@ -14,7 +14,7 @@ The SDK is partly built with [React Native](https://facebook.github.io/react-nat
 
 ### Install with Cocoapods
 
-Install using Cocoapods. This method works for Xcode 11.4. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier version of our SDK.
+Install using Cocoapods. This method works for the Xcode 11.4.* series. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier version of our SDK.
 
 `$ sudo gem install cocoapods`
 
@@ -38,9 +38,9 @@ Install the needed pods:
 
 `$ pod install`
 
-After this you should use the newly made `*.xcworkspace` file in Xcode.
+After this you should use the newly created `*.xcworkspace` file in Xcode.
 
-**Note:** if you get `Failed to download` errors from the `pod install`, make sure that you have [an account at github.com and have setup your github SSH key](https://github.com/settings/ssh) as the above Podfile requires it. If you don't have a github account, then in the Podfile, replace all occurances of
+**Note:** if you get `Failed to download` errors from the `pod install`, make sure that you have [an account at github.com and have setup your github SSH key](https://github.com/settings/ssh) as the above Podfile requires it. If you don't have a github account, then in the Podfile, replace all occurrences of
 
 ```ruby
 :git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
@@ -144,7 +144,7 @@ The event could be a touch of a button, at the end of a transaction, proactive, 
 
 ## extra data
 
-From version `0.3.1` it's also possible to send extra data from the app to your form. 
+From version `0.3.1` you can send extra data from the app to your form. 
 This can be done by adding a key and a value to the `data()` method.
 The data should be added before the `event()` method is called if you want to include the data in the form that comes up for that event.
 
