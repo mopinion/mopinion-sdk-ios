@@ -7,112 +7,150 @@ There is also a Mopinion Mobile SDK for Android available [here](https://github.
 
 You can see how your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app from the Apple iOS App Store.
 
+## Release notes for version 0.4.5
+
+### Changes in 0.4.5
+- SDK format converted to xcframework. 
+- Migrated to react-native 0.61.5 (breaking change).
+
+### New features in 0.4.5
+- Support for iOS Simulator on ARM Macs.
+- Smaller screenshot thumbnail.
+- Press thumbnail to display a larger preview.
+
+### Improvements
+- Fix for in-app forms rating/score labels that start hidden.
+- Lower size of screenshot images.
+- Patch to fix image display issues with react-native 0.61.5.
+- Patch to fix react-native versions < 0.64.1 for Xcode 12.5 compatibility.
+
+Note: Our SDK has been tested with react-native version 0.61.5 (with some iOS patches) and Xcode 12.4 and 12.5.
+
 ## Install
 
-For Xcode 11, the Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
+The Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
-
-### Install with Cocoapods
-
-Install using Cocoapods. This method works for the Xcode 11.4.* series. For earlier versions of Xcode, follow the procedure under "Install with Cocoapods and React Native" using an earlier version of our SDK.
-
-`$ sudo gem install cocoapods`
-
-make a `Podfile` in root of your project:
-
-```ruby
-platform :ios, '9.0'
-use_frameworks!
-target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '~> 0.4.4'
-	pod 'React', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-	pod 'react-native-webview', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-	pod 'yoga', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-	pod 'DoubleConversion', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-	pod 'GLog', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-	pod 'Folly', :git => 'git@github.com:mopinion/mopinion-sdk-ios.git', :tag => '0.4.4'
-end
-```
-  
-Install the needed pods:
-
-`$ pod install`
-
-After this you should use the newly created `*.xcworkspace` file in Xcode.
-
-**Note:** if you get `Failed to download` errors from the `pod install`, make sure that you have [an account at github.com and have setup your github SSH key](https://github.com/settings/ssh) as the above Podfile requires it. If you don't have a github account, then in the Podfile, replace all occurrences of
-
-```ruby
-:git => 'git@github.com:mopinion/mopinion-sdk-ios.git'
-```
-by
-
-```ruby
-:git => 'https://github.com/mopinion/mopinion-sdk-ios.git'
-```
-And then run the `pod install` again.
 
 ### Install with Cocoapods and React Native (Node.js)
 
-Alternatively, install the React Native frameworks via Node.js. 
+First, install the React Native frameworks using Node.js. 
 
-[Install Node.js/npm](https://www.npmjs.com/get-npm)
+[Install Node.js/npm](https://www.npmjs.com/get-npm) via either [macports](https://macports.org) or homebrew.
 
-make a `package.json` file in the root of your project:
+Then, make a `package.json` file in the root of your project:
 
 ```javascript
 {
-  "name": "MopinionSDK",
-  "version": "0.1.0",
+  "name": "YourApp",
+  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "^0.59.10",
-    "react-native-webview": "^9.2.2"
+    "@react-native-community/async-storage": "^1.12.1",
+    "patch-package": "^6.4.6",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-webview": "^11.6.2"
   }
 }
 ```
 
+From the terminal, also download our folder [`patches`](https://github.com/mopinion/mopinion-sdk-ios/tree/master/patches) with its content into the location where your `package.json` file resides:
+
+```sh
+$ mkdir patches
+$ curl https://raw.githubusercontent.com/mopinion/mopinion-sdk-ios/master/patches/react-native+0.61.5.patch --output patches/react-native+0.61.5.patch
+```
+
+It contains a fix for react-native 0.61.5 on iOS. 
+
+Next, execute:
 `$ npm install`
 
-Note: if you decide to use react-native version 0.59.10 then you'll manually need to remove UIWebView from its source code if you want your App to be accepted by the Appstore.
-
-Now you can install everything with Cocoapods with a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) 
-for Xcode 11.4 :
+Now create a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) to install everything with [Cocoapods](https://cocoapods.org/)  :
 
 ```ruby
 platform :ios, '9.0'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.4.4'
-	pod 'React', :path => './node_modules/react-native', :subspecs => [
-	  'Core',
-	  'CxxBridge',
-	  'DevSupport',
-	  'RCTImage',
-	  'RCTNetwork',
-	  'RCTText',
-	  'RCTWebSocket',
-	  'RCTAnimation'
-	]
-	pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
-	pod 'react-native-webview', :path => './node_modules/react-native-webview/react-native-webview.podspec'
-	pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-	pod 'GLog', :podspec => './node_modules/react-native/third-party-podspecs/GLog.podspec'
-	pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+	pod 'MopinionSDK',  '>= 0.4.5'
+  # React Core components
+  pod 'FBLazyVector', :path => "./node_modules/react-native/Libraries/FBLazyVector"
+  pod 'FBReactNativeSpec', :path => "./node_modules/react-native/Libraries/FBReactNativeSpec"
+  pod 'RCTRequired', :path => "./node_modules/react-native/Libraries/RCTRequired"
+  pod 'RCTTypeSafety', :path => "./node_modules/react-native/Libraries/TypeSafety"
+  pod 'React', :path => './node_modules/react-native/'
+  pod 'React-Core', :path => './node_modules/react-native/'
+  pod 'React-Core/DevSupport', :path => './node_modules/react-native/'
+  pod 'React-Core/RCTWebSocket', :path => './node_modules/react-native/' # needed for debugging
+  pod 'React-CoreModules', :path => './node_modules/react-native/React/CoreModules'
+  pod 'React-RCTActionSheet', :path => './node_modules/react-native/Libraries/ActionSheetIOS'
+  pod 'React-RCTBlob', :path => './node_modules/react-native/Libraries/Blob'
+  pod 'React-RCTLinking', :path => './node_modules/react-native/Libraries/LinkingIOS'
+  pod 'React-RCTNetwork', :path => './node_modules/react-native/Libraries/Network'
+  pod 'React-RCTSettings', :path => './node_modules/react-native/Libraries/Settings'
+  pod 'React-RCTText', :path => './node_modules/react-native/Libraries/Text'
+  pod 'React-RCTVibration', :path => './node_modules/react-native/Libraries/Vibration'
+  pod 'React-RCTAnimation', :path => './node_modules/react-native/Libraries/NativeAnimation'
+  pod 'React-RCTImage', :path => './node_modules/react-native/Libraries/Image'
+  pod 'React-cxxreact', :path => './node_modules/react-native/ReactCommon/cxxreact'
+  pod 'React-jsi', :path => './node_modules/react-native/ReactCommon/jsi'
+  pod 'React-jsiexecutor', :path => './node_modules/react-native/ReactCommon/jsiexecutor'
+  pod 'React-jsinspector', :path => './node_modules/react-native/ReactCommon/jsinspector'
+  pod 'ReactCommon/jscallinvoker', :path => "./node_modules/react-native/ReactCommon"
+  pod 'ReactCommon/turbomodule/core', :path => "./node_modules/react-native/ReactCommon"
+  # React-native-community components
+  pod 'RNCAsyncStorage', :path => './node_modules/@react-native-community/async-storage'
+  # Replacement without UIWebView for builtin RTCWebView of RN 0.59.10
+  pod "react-native-webview", :path => "./node_modules/react-native-webview/react-native-webview.podspec"
+
+  # Third party deps podspec link
+  pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => './node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+  # Explicitly include Yoga if you are using RN >= 0.42.0
+  pod 'Yoga', :path => "./node_modules/react-native/ReactCommon/yoga"
+
 end
+
+# ==== Below patch to use older RN versions < 0.64.1 with new Xcode 12.5 or up 
+# https://github.com/facebook/react-native/issues/31412
+ post_install do |installer|
+   ## Fix for XCode 12.5
+       find_and_replace("./node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
+       "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
+       find_and_replace("./node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
+       "RCTBridgeModuleNameForClass(module))", "RCTBridgeModuleNameForClass(Class(module)))")
+   end
+ 
+ def find_and_replace(dir, findstr, replacestr)
+   Dir[dir].each do |name|
+       text = File.read(name)
+       replace = text.gsub(findstr,replacestr)
+       if text != replace
+           puts "Fix: " + name
+           File.open(name, "w") { |file| file.puts replace }
+           STDOUT.flush
+       end
+   end
+   Dir[dir + '*/'].each(&method(:find_and_replace))
+ end
 ```
 
-Next perform a
+And perform a
  
 `$ pod install`
 
-After this you should use the newly created `*.xcworkspace` file in Xcode.
+After this you should use the newly created `<YourApp>.xcworkspace` file in Xcode.
+
+Note: first time Xcode may fail to build your xcworkspace. Clean and build/run it again usually solves this error.
 
 ### font
 
 The SDK includes a font that should be added to the fonts list in the `Info.plist` file of your project.
 
-Add this font to your app's `Info.plist` > `Fonts provided by application`:   
+In Xcode, add this font to your app's `Info.plist` > `Fonts provided by application`:   
 - `Frameworks/MopinionSDK.framework/FontAwesome.ttf`
 
 ## Implement the SDK
