@@ -31,6 +31,42 @@ Note: Our SDK has been tested with react-native version 0.61.5 (with some iOS pa
 The Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
 
+### Install CocoaPods native on ARM based Macs
+Macs with an ARM processor need a newer Ruby toolchain to use CocoaPods via a network. To prevent ffi errors `LoadError - dlopen(/Library/Ruby/Gems/2.6.0/gems/ffi-1.14.2/lib/ffi_c.bundle, 0x0009)` causing build failures:
+
+1. Install the Xcode 12.5 (or later) *Command Line* tools (even if you already installed the full Xcode IDE version)
+2. Install [macports](https://macports.org)
+3. In terminal, execute 
+
+```sh
+sudo port install ruby27
+sudo port select --set ruby ruby27
+source .zprofile # or .profile, whereever you defined your $PATH
+sudo gem update
+sudo gem install ffi
+sudo gem install cocoapods
+```
+Tested to work with M1 on macOS Big Sur 11.4, Xcode 12.5, macports 2.7.1, ruby 2.7.3p183, cocoapods 1.10.1
+
+#### Reported native cocoapods install for homebrew users
+For homebrew users the procedure is a bit different, [according to github](https://github.com/CocoaPods/CocoaPods/issues/9907#issuecomment-835385306):
+
+1. Update to macOS Big Sur 11.3.1
+2. Install homebrew
+3. Update ruby to at least 2.7.3
+
+```sh
+brew install rbenv
+rbenv init
+rbenv install 2.7.3
+export RBENV_VERSION=2.7.3 # or however you set your ruby version
+```
+4. Install cocoapods 
+
+```sh
+brew install cocoapods
+```
+
 ### Install with Cocoapods and React Native (Node.js)
 
 First, install the React Native frameworks using Node.js. 
