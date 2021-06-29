@@ -24,7 +24,9 @@ You can see how your mobile forms will look like in your app by downloading our 
 - Patch to fix image display issues with react-native 0.61.5.
 - Patch to fix react-native versions < 0.64.1 for Xcode 12.5 compatibility.
 
-Note: Our SDK has been tested with react-native version 0.61.5 (with some iOS patches) and Xcode 12.4 and 12.5.
+### Remarks
+- Our SDK has been tested with react-native version 0.61.5 (with some iOS patches) and Xcode 12.4, 12.5 and 12.5.1.
+- Tip: If you don't see design changes to forms coming through in your app during development, remove and re-install your app. That will clear the device cache, which normally can take several hours to refresh.
 
 ## Install
 
