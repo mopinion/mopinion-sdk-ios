@@ -16,17 +16,18 @@ You can see how your mobile forms will look like in your app by downloading our 
 - [Using callback mode](#callback-mode)
 - [Edit triggers](#edit-triggers)
 
-## Release notes for version 0.5.0
+## Release notes for version 0.6.0
 
-### New features in 0.5.0
-- 3 new variants of the method `event()` add an asynchronous callback response `onMopinionEvent()` as part of the protocol `MopinionCallbackEventDelegate`, to let you receive a certain `MopinionCallbackEvent` from the SDK about the feedback form.
-- the new variants of the method `event()` include an asynchronous callback response `onMopinionEventError()` as part of the protocol `MopinionCallbackEventErrorDelegate` to inform you of errors and allow use with delegates or closures. 
-- Currently supported `MopinionCallbackEvents` are when the form is displayed, when the user submitted the form or when the form closed.
-- The callback includes an object `MopinionResponse` that can optionally contain data associated with some events. Data can be for example the form key, the form name or miscellanous data as dictionary (Foundation representation of a JSONObject).
-- The new callback behaviour is optional. You don't need to change your existing code, the SDK by default will behave as before without making callbacks.
+### New features in 0.6.0
+- users can select an image from their device to upload as a screenshot, or use the pre-made screenshot.
+- This new image select feature is optional and can be enabled per form in the Mopinion Form editor. By default the SDK will behave as before and will only show the pre-made screenshot.
+
+### Changes in 0.6.0
+- Requires at least iOS 11 to run.
+- 32-bit devices are no longer supported.
 
 ### Remarks
-- Our SDK has been tested with react-native version 0.61.5 (with some iOS patches) and Xcode 13.
+- Our SDK has been tested with react-native version 0.66.3 and Xcode 13.1.
 - Tip: If you don't see design changes to forms coming through in your app during development, remove and re-install your app. That will clear the device cache, which normally can take several hours to refresh.
 
 ## <a name="install">Install</a>
@@ -83,26 +84,18 @@ Then, make a `package.json` file in the root of your project:
   "name": "YourApp",
   "version": "0.0.1",
   "scripts": {
-    "postinstall": "patch-package"
+    "start": "react-native start"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.1",
-    "patch-package": "^6.4.6",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-webview": "11.6.2"
+    "@react-native-async-storage/async-storage": "^1.15.14",
+    "create-react-class": "^15.7.0",
+    "react": "17.0.2",
+    "react-native": "0.66.3",
+    "react-native-image-picker": "^3.8.1",
+    "react-native-webview": "^11.15.0"
   }
 }
 ```
-
-From the terminal, also download our folder [`patches`](https://github.com/mopinion/mopinion-sdk-ios/tree/master/patches) with its content into the location where your `package.json` file resides:
-
-```sh
-$ mkdir patches
-$ curl https://raw.githubusercontent.com/mopinion/mopinion-sdk-ios/master/patches/react-native+0.61.5.patch --output patches/react-native+0.61.5.patch
-```
-
-It contains a fix for react-native 0.61.5 on iOS. 
 
 Next, execute:
 `$ npm install`
@@ -110,71 +103,31 @@ Next, execute:
 Now create a `Podfile` like this (assuming the `node_modules` folder is in the same location as your `Podfile`) to install everything with [Cocoapods](https://cocoapods.org/)  :
 
 ```ruby
-platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '11.0'
+require_relative './node_modules/react-native/scripts/react_native_pods'
+require_relative './node_modules/@react-native-community/cli-platform-ios/native_modules'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.5.0'
-  # React Core components
-  pod 'FBLazyVector', :path => "./node_modules/react-native/Libraries/FBLazyVector"
-  pod 'FBReactNativeSpec', :path => "./node_modules/react-native/Libraries/FBReactNativeSpec"
-  pod 'RCTRequired', :path => "./node_modules/react-native/Libraries/RCTRequired"
-  pod 'RCTTypeSafety', :path => "./node_modules/react-native/Libraries/TypeSafety"
-  pod 'React', :path => './node_modules/react-native/'
-  pod 'React-Core', :path => './node_modules/react-native/'
-  pod 'React-Core/DevSupport', :path => './node_modules/react-native/'
-  pod 'React-Core/RCTWebSocket', :path => './node_modules/react-native/' # needed for debugging
-  pod 'React-CoreModules', :path => './node_modules/react-native/React/CoreModules'
-  pod 'React-RCTActionSheet', :path => './node_modules/react-native/Libraries/ActionSheetIOS'
-  pod 'React-RCTBlob', :path => './node_modules/react-native/Libraries/Blob'
-  pod 'React-RCTLinking', :path => './node_modules/react-native/Libraries/LinkingIOS'
-  pod 'React-RCTNetwork', :path => './node_modules/react-native/Libraries/Network'
-  pod 'React-RCTSettings', :path => './node_modules/react-native/Libraries/Settings'
-  pod 'React-RCTText', :path => './node_modules/react-native/Libraries/Text'
-  pod 'React-RCTVibration', :path => './node_modules/react-native/Libraries/Vibration'
-  pod 'React-RCTAnimation', :path => './node_modules/react-native/Libraries/NativeAnimation'
-  pod 'React-RCTImage', :path => './node_modules/react-native/Libraries/Image'
-  pod 'React-cxxreact', :path => './node_modules/react-native/ReactCommon/cxxreact'
-  pod 'React-jsi', :path => './node_modules/react-native/ReactCommon/jsi'
-  pod 'React-jsiexecutor', :path => './node_modules/react-native/ReactCommon/jsiexecutor'
-  pod 'React-jsinspector', :path => './node_modules/react-native/ReactCommon/jsinspector'
-  pod 'ReactCommon/jscallinvoker', :path => "./node_modules/react-native/ReactCommon"
-  pod 'ReactCommon/turbomodule/core', :path => "./node_modules/react-native/ReactCommon"
-  # React-native-community components
-  pod 'RNCAsyncStorage', :path => './node_modules/@react-native-community/async-storage'
-  # Replacement without UIWebView for builtin RTCWebView of RN 0.59.10
-  pod "react-native-webview", :path => "./node_modules/react-native-webview/react-native-webview.podspec"
+	pod 'MopinionSDK',  '>= 0.6.0'
+  config = use_native_modules!
 
-  # Third party deps podspec link
-  pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-  pod 'glog', :podspec => './node_modules/react-native/third-party-podspecs/glog.podspec'
-  pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
-  # Explicitly include Yoga if you are using RN >= 0.42.0
-  pod 'Yoga', :path => "./node_modules/react-native/ReactCommon/yoga"
+  use_react_native!(
+	  # Your 'node_modules' directory is probably in the root of your project,
+	  # but if not, adjust the `:path` accordingly
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  post_install do |installer|
+    react_native_post_install(installer)
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+  end
 
 end
 
-# ==== Below patch to use older RN versions < 0.64.1 with new Xcode 12.5 or up 
-# https://github.com/facebook/react-native/issues/31412
- post_install do |installer|
-   ## Fix for XCode 12.5
-       find_and_replace("./node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
-       "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
-       find_and_replace("./node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
-       "RCTBridgeModuleNameForClass(module))", "RCTBridgeModuleNameForClass(Class(module)))")
-   end
- 
- def find_and_replace(dir, findstr, replacestr)
-   Dir[dir].each do |name|
-       text = File.read(name)
-       replace = text.gsub(findstr,replacestr)
-       if text != replace
-           puts "Fix: " + name
-           File.open(name, "w") { |file| file.puts replace }
-           STDOUT.flush
-       end
-   end
-   Dir[dir + '*/'].each(&method(:find_and_replace))
- end
 ```
 
 And perform a
@@ -185,12 +138,24 @@ After this you should use the newly created `<YourApp>.xcworkspace` file in Xcod
 
 Note: first time Xcode may fail to build your xcworkspace. Clean and build/run it again usually solves this error.
 
+
 ### font
 
 The SDK includes a font that should be added to the fonts list in the `Info.plist` file of your project.
 
 In Xcode, add this font to your app's `Info.plist` > `Fonts provided by application`:   
 - `Frameworks/MopinionSDK.framework/FontAwesome.ttf`
+
+### Add photo library usage to your app
+
+The SDK allows users to select an image from her/his device to upload as a screenshot. 
+In order to pass iOS App Store criteria on user privacy, in Xcode make sure to add the `Privacy - Photo Library Usage Description` permission to the `Info.plist` of your app:
+
+```
+<key>NSPhotoLibraryUsageDescription</key>
+<string>You can upload an image from your library for use as a screenshot</string>
+```
+
 
 <br>
 

@@ -2,11 +2,11 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "MopinionSDK"
-  s.version      = "0.5.0"
+  s.version      = "0.6.0"
   s.summary      = "Mopinion iOS SDK"
-  s.ios.deployment_target  = '9.0'
+  s.ios.deployment_target  = '11.0'
   s.description  = "Mopinion mobile SDK for iOS. Build dynamic customizable customer feedback forms for your iOS app."
-  s.homepage     = "http://mopinion.com"
+  s.homepage     = "https://mopinion.com"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.authors      = { "Floris Snuif" => "floris@mopinion.com", "Anwar Jebali" => "anwar@mopinion.com", "Kees van Welsenis" => "kvwelsenis@mopinion.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "11.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source = {:git => "https://github.com/mopinion/mopinion-sdk-ios.git", :tag => s.version}

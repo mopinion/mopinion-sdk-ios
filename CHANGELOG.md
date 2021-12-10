@@ -1,3 +1,6 @@
+# 0.5.0
+- Introduced `MopinionCallbackEvents` for when a form is displayed, the user has submitted a form or when a form closed.
+
 # 0.4.5
 - SDK framework format converted to xcframework. 
 - Migrated to react-native 0.61.5.
