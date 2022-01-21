@@ -36,7 +36,19 @@ The Mopinion Mobile SDK Framework can be installed by using the popular dependen
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
 
 ### Install CocoaPods native on ARM based Macs
-Macs with an ARM processor need a newer Ruby toolchain to use CocoaPods via a network. To prevent ffi errors `LoadError - dlopen(/Library/Ruby/Gems/2.6.0/gems/ffi-1.14.2/lib/ffi_c.bundle, 0x0009)` causing build failures:
+
+For macOS Monterey 12.1 installation of cocoapods 1.11.2 works out of the box:
+
+```sh
+sudo gem install cocoapods
+```
+If you had applied the below patch on macOS Big Sur 11, remove it before installation.
+
+### Patch to install earlier CocoaPods native on ARM based Macs 
+
+Macs with an ARM processor need a newer Ruby toolchain to use CocoaPods via a network. Not needed for cocoapods 1.11.2 and macOS Monterey, but for macOS Big Sur you can try this procedure.
+
+To prevent ffi errors `LoadError - dlopen(/Library/Ruby/Gems/2.6.0/gems/ffi-1.14.2/lib/ffi_c.bundle, 0x0009)` causing build failures:
 
 1. Install the Xcode 12.5 (or later) *Command Line* tools (even if you already installed the full Xcode IDE version)
 2. Install [macports](https://macports.org)
