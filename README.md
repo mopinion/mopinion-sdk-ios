@@ -16,15 +16,10 @@ You can see how your mobile forms will look like in your app by downloading our 
 - [Using callback mode](#callback-mode)
 - [Edit triggers](#edit-triggers)
 
-## Release notes for version 0.6.0
+## Release notes for version 0.6.1
 
-### New features in 0.6.0
-- users can select an image from their device to upload as a screenshot, or use the pre-made screenshot.
-- This new image select feature is optional and can be enabled per form in the Mopinion Form editor. By default the SDK will behave as before and will only show the pre-made screenshot.
-
-### Changes in 0.6.0
-- Requires at least iOS 11 to run.
-- 32-bit devices are no longer supported.
+### Improvements in 0.6.1
+- Fixed an issue with iOS 15 where the extra/meta data and screenshot could disappear for forms of type "web".
 
 ### Remarks
 - Our SDK has been tested with react-native version 0.66.3 and Xcode 13.1.
@@ -122,7 +117,7 @@ require_relative './node_modules/react-native/scripts/react_native_pods'
 require_relative './node_modules/@react-native-community/cli-platform-ios/native_modules'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.6.0'
+	pod 'MopinionSDK',  '>= 0.6.1'
   config = use_native_modules!
 
   use_react_native!(

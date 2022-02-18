@@ -1,3 +1,9 @@
+# 0.6.0
+- Introduced option for users to upload an image from their device as a screenshot.
+- Requires at least iOS 11 to run.
+- 32-bit devices are no longer supported.
+- Migrated to react-native version 0.66.3 and Xcode 13.1
+
 # 0.5.0
 - Introduced `MopinionCallbackEvents` for when a form is displayed, the user has submitted a form or when a form closed.
 
