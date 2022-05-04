@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/MopinionSDK-Swift.h</key>
 		<data>
-		TWzm8A+vfbVXtrwA41bzxJFVkKI=
+		wdujKGnKC/ndCy0SklZIP9Z2MIg=
 		</data>
 		<key>Headers/MopinionSDK.h</key>
 		<data>
@@ -18,71 +18,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		z6TytSwNhxNsMu+I4pQUy47eal8=
+		K7Ss5kAkWJnISgHuSO999ag+dG0=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		KPxIjqEdOVPBElHqzINDcgWxlGw=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<data>
-		KPxIjqEdOVPBElHqzINDcgWxlGw=
+		gXFO0mFDHzPsbrXBBKiDbBKVEQ0=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		/kIamUsZQF8XbiXDobMBW8cHOI4=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<data>
-		/kIamUsZQF8XbiXDobMBW8cHOI4=
+		eHcDrmb39gQIrBAKtu2+CSmLkSE=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		RcVoxttvjNonjVec4Xzb3WOms7w=
+		jsNMZRnsYZILjvPLH3rwwEBUTR4=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		74O3nS05AGdss4/9ZRBiIO0SqhI=
+		5z3V3gUWquHuTSsAZpbtZdk1Gfw=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		D3Vz8AZvme95/DTVPw5Ps/kE14I=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		RcVoxttvjNonjVec4Xzb3WOms7w=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		74O3nS05AGdss4/9ZRBiIO0SqhI=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		D3Vz8AZvme95/DTVPw5Ps/kE14I=
+		FM9El0xO57QhVU3zE4m6WuUE4U0=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MyIRGjQFLSzgemdW+b+BAU3UnoE=
+		b7jU04nQDW7RwTimJN7Udmp+xhU=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9gnO9fzC5pKl804rM1fWsVuZPx4=
+		zU3ENKYKTDSPv8l2mcfJBn08JMk=
 		</data>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		poDdufl+wzyProc+tU838WDv5oU=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		MyIRGjQFLSzgemdW+b+BAU3UnoE=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		9gnO9fzC5pKl804rM1fWsVuZPx4=
-		</data>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		poDdufl+wzyProc+tU838WDv5oU=
+		JIn3T6MFKB2yw5uYTJaJjW0u19I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -90,7 +58,7 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		q332F0hOVRByYmGxlqtO+CLemc0=
+		saCYBOHVLJf5UEtULDKjo2sCeSY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -106,7 +74,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eto0/bZnbEnvUCejmrPsaZbzyhqCJOKxd3ycfKkgd5Q=
+			RlDnwZsT7HcSugy02ZbqW3ggjSuLLmlk5njWOu8YBbA=
 			</data>
 		</dict>
 		<key>Headers/MopinionSDK.h</key>
@@ -120,112 +88,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			e8X69BzgoJIjSdeimSZeHP1TDZXnNIEQkoic+tTMwQk=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			e8X69BzgoJIjSdeimSZeHP1TDZXnNIEQkoic+tTMwQk=
+			0JdronWAA5lShVWr8WTZJ1SEJi/Zv7X1h7u7Ry59umY=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OBQmpGzsnrBAIcfrS3y44EZuxj6ZjlnYBBlbABsjCN0=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OBQmpGzsnrBAIcfrS3y44EZuxj6ZjlnYBBlbABsjCN0=
+			dOoKfBJwMgcs/nt4OadFKXfbrwPzqiJaZJQ/T0U43xs=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WyVRPtRBp5e10CvaYC8sIexO8oSJxddWgZefnI5n0Ps=
+			1rieMMFgsOwqke+PTnVBhypZQOz5jH66pG1wTyQE//g=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oNqyjAF/EqJ9FWHT5a7JCl72LpOTXHz0pmHepRTJdXY=
+			sI1k2/kxc6WAsNzQ/TLbLvqYd1adB1bLLA7XERENTU0=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qFhHvtVvhmtG+NWitOXaPJFQtXUPQd+HlmP9yvvQxYI=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WyVRPtRBp5e10CvaYC8sIexO8oSJxddWgZefnI5n0Ps=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			oNqyjAF/EqJ9FWHT5a7JCl72LpOTXHz0pmHepRTJdXY=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			qFhHvtVvhmtG+NWitOXaPJFQtXUPQd+HlmP9yvvQxYI=
+			FA2+id3c/1XrNpqDH/bmVJdWbpYfIsjaMjuYVhn3GgI=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lh2yheU5SKj/JfuhKnWWpgX9re7diownBYuqWROxBrk=
+			ruQCI2stizrXoSHngFtvMLu5gfgQS0oAOFicJcSXIaM=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HvkoDRKdhiGVfZK4jvQRZL6l53icIZC6mQs3pNNmTYM=
+			uUmG/bSoyzTuHboC2ptNJbybJEXhrPptv1bbxJAsmz0=
 			</data>
 		</dict>
 		<key>Modules/MopinionSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CBgw2ycbUricwe8aBqXgtV3urNvEhJERJMizSs7SR3A=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			lh2yheU5SKj/JfuhKnWWpgX9re7diownBYuqWROxBrk=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HvkoDRKdhiGVfZK4jvQRZL6l53icIZC6mQs3pNNmTYM=
-			</data>
-		</dict>
-		<key>Modules/MopinionSDK.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CBgw2ycbUricwe8aBqXgtV3urNvEhJERJMizSs7SR3A=
+			7DnRNH8hfFsMi1n9WBDroYZ+L1WLti4o+TuwOjyD+K4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -239,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vlJ320kN70XdzEqZBWUTfiOIO1Lh1WaFLDNk4lQ7nmE=
+			vTrsuexL9xmnZ4HfvQE83XRrE6Lx19ro82gnoLHVatM=
 			</data>
 		</dict>
 	</dict>

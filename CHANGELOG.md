@@ -1,3 +1,6 @@
+# 0.6.1
+- Fixed an issue with iOS 15 where the extra/meta data and screenshot could disappear for forms of type "web".
+
 # 0.6.0
 - Introduced option for users to upload an image from their device as a screenshot.
 - Requires at least iOS 11 to run.

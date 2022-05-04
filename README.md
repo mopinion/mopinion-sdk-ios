@@ -16,67 +16,29 @@ You can see how your mobile forms will look like in your app by downloading our 
 - [Using callback mode](#callback-mode)
 - [Edit triggers](#edit-triggers)
 
-## Release notes for version 0.6.1
+## Release notes for version 0.7.0
 
-### Improvements in 0.6.1
-- Fixed an issue with iOS 15 where the extra/meta data and screenshot could disappear for forms of type "web".
+### New features
+
+- Support for Mopinion Metrics on form shown, next page, previous page, feedback sent and form hidden. This feature can be en-/disabled per form in the Mopinion form editor, under "Integration".
 
 ### Remarks
-- Our SDK has been tested with react-native version 0.66.3 and Xcode 13.1.
+- Our SDK has been tested with react-native version 0.66.4 and Xcode 13.3.1.
 - Tip: If you don't see design changes to forms coming through in your app during development, remove and re-install your app. That will clear the device cache, which normally can take several hours to refresh.
 
 ## <a name="install">Install</a>
 
-The Mopinion Mobile SDK Framework can be installed by using the popular dependency manager [Cocoapods](https://cocoapods.org).
+The Mopinion Mobile SDK Framework can be installed using the popular dependency manager [Cocoapods](https://cocoapods.org).
 The SDK is partly built with [React Native](https://facebook.github.io/react-native/), it needs some Frameworks to function.
 
-### Install CocoaPods native on ARM based Macs
+### Install CocoaPods
 
-For macOS Monterey 12.1 installation of cocoapods 1.11.2 works out of the box:
+As from CocoaPods 1.11.2 and macOS Monterey 12.1 installation works out of the box also on ARM based Macs:
 
 ```sh
 sudo gem install cocoapods
 ```
-If you had applied the below patch on macOS Big Sur 11, remove it before installation.
 
-### Patch to install earlier CocoaPods native on ARM based Macs 
-
-Macs with an ARM processor need a newer Ruby toolchain to use CocoaPods via a network. Not needed for cocoapods 1.11.2 and macOS Monterey, but for macOS Big Sur you can try this procedure.
-
-To prevent ffi errors `LoadError - dlopen(/Library/Ruby/Gems/2.6.0/gems/ffi-1.14.2/lib/ffi_c.bundle, 0x0009)` causing build failures:
-
-1. Install the Xcode 12.5 (or later) *Command Line* tools (even if you already installed the full Xcode IDE version)
-2. Install [macports](https://macports.org)
-3. In terminal, execute 
-
-```sh
-sudo port install ruby27
-sudo port select --set ruby ruby27
-source .zprofile # or .profile, whereever you defined your $PATH
-sudo gem update
-sudo gem install ffi
-sudo gem install cocoapods
-```
-Tested to work with M1 on macOS Big Sur 11.4, Xcode 12.5, macports 2.7.1, ruby 2.7.3p183, cocoapods 1.10.1
-
-#### Reported native cocoapods install for homebrew users
-For homebrew users the procedure is a bit different, [according to github](https://github.com/CocoaPods/CocoaPods/issues/9907#issuecomment-835385306):
-
-1. Update to at least macOS Big Sur 11.3.1
-2. Install homebrew
-3. Update ruby to at least 2.7.3
-
-```sh
-brew install rbenv
-rbenv init
-rbenv install 2.7.3
-export RBENV_VERSION=2.7.3 # or however you set your ruby version
-```
-4. Install cocoapods 
-
-```sh
-brew install cocoapods
-```
 
 ### Install with Cocoapods and React Native (Node.js)
 
@@ -94,10 +56,10 @@ Then, make a `package.json` file in the root of your project:
     "start": "react-native start"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.15.14",
+    "@react-native-async-storage/async-storage": "^1.15.17",
     "create-react-class": "^15.7.0",
     "react": "17.0.2",
-    "react-native": "0.66.3",
+    "react-native": "0.66.4",
     "react-native-image-picker": "^3.8.1",
     "react-native-webview": "^11.15.0"
   }
@@ -117,7 +79,7 @@ require_relative './node_modules/react-native/scripts/react_native_pods'
 require_relative './node_modules/@react-native-community/cli-platform-ios/native_modules'
 use_frameworks!
 target '<YOUR TARGET>' do
-	pod 'MopinionSDK',  '>= 0.6.1'
+	pod 'MopinionSDK',  '>= 0.7.0'
   config = use_native_modules!
 
   use_react_native!(
@@ -374,7 +336,7 @@ class YourViewController: UIViewController, MopinionOnEvaluateDelegate {
             } else if(mopinionEvent == .FORM_CLOSED) {
                 if(self.wasFormSent) {
                     let formKey = response.getString(.FORM_KEY) ?? ""
-                    print("The form \(formKey) has beent sent and closed, now you can run some code.")
+                    print("The form \(formKey) has been sent and closed, now you can run some code.")
                 }
             }
 
