@@ -3,7 +3,7 @@
 The Mopinion Mobile SDK can be used to collect feedback from iOS apps based on events.
 To use Mopinion mobile feedback forms in your app you can include the SDK as a Framework in your Xcode project.
 
-There is also a Mopinion Mobile SDK for Android available [here](https://github.com/mopinion/mopinion-sdk-android).
+There is also a Mopinion Mobile SDK for Android available [here](https://github.com/Mopinion-com/mopinion-sdk-android).
 
 You can see how your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app from the Apple iOS App Store.
 
