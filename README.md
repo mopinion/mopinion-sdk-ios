@@ -1,11 +1,14 @@
-# Mopinion Mobile SDK iOS
+# Mopinion Mobile SDK iOS classic series (Deprecated)
 
+This SDK (0.x series) is deprecated. Check out our shiny new Native iOS SDK [here](https://github.com/Mopinion-com/mopinion-sdk-ios)!
+
+### Classic series (versions 0.x)
 The Mopinion Mobile SDK can be used to collect feedback from iOS apps based on events.
 To use Mopinion mobile feedback forms in your app you can include the SDK as a Framework in your Xcode project.
 
 There is also a Mopinion Mobile SDK for Android available [here](https://github.com/Mopinion-com/mopinion-sdk-android).
 
-You can see how your mobile forms will look like in your app by downloading our [Mopinion Forms](https://itunes.apple.com/nl/app/mopinion-forms/id1376756796?l=en&mt=8) preview app from the Apple iOS App Store.
+You can see how your mobile forms will look like in your app by downloading our [Mopinion Classic Forms](https://apps.apple.com/nl/app/mopinion-classic-forms/id1673189291?l=en) preview app from the Apple iOS App Store.
 
 ### Contents
 
